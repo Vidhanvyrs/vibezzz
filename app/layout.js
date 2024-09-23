@@ -16,13 +16,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   //we are going to do some cleanup first
   const header = (
-    <header className="flex items-center justify-between gap-4 p-4 sm:p-8">
+    <header className="sticky top-0 z-10 flex items-center justify-between gap-4 p-4 bg-white sm:p-8">
       <Link href={"/"}>
         <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}>
           Vibezz
         </h1>
       </Link>
-      <Link href={"/"}>
+      <Link href={"/dashboard/gimmmememes"}>
         <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}>
           gimmeMEMES!
         </h1>
