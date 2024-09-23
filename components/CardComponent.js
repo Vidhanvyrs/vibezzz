@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Share2, Heart, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function CardComponent({ imageUrl }) {
   const [mounted, setMounted] = useState(false);
@@ -33,12 +34,14 @@ export default function CardComponent({ imageUrl }) {
               <button className="p-2 text-white rounded-full bg-white/20 backdrop-blur-sm">
                 <Heart size={20} />
               </button>
-              <button className="p-2 text-white rounded-full bg-white/20 backdrop-blur-sm">
+              {/* <button className="p-2 text-white rounded-full bg-white/20 backdrop-blur-sm">
                 <MessageCircle size={20} />
-              </button>
+              </button> */}
             </div>
             <button className="p-2 text-white rounded-full bg-white/20 backdrop-blur-sm">
-              <Share2 size={20} />
+              <Link href={imageUrl}>
+                <Share2 size={20} />
+              </Link>
             </button>
           </div>
         </div>
