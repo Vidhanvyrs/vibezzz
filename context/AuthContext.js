@@ -65,6 +65,8 @@ export function AuthProvider({ children }) {
     return unsubscribe; // clean up
   }, []);
 
+  console.log(userDataObj);
+
   const value = {
     currentUser,
     userDataObj,
