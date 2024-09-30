@@ -11,6 +11,9 @@ const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 export const metadata = {
   title: "Vibezz",
   description: "Track your daily mood every day of the year!",
+  icons: {
+    icon: "/icon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {

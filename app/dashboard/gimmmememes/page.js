@@ -4,9 +4,6 @@ import MemesComponent from "@/components/Memes";
 import { useAuth } from "@/context/AuthContext";
 import { Fugaz_One, Open_Sans } from "next/font/google";
 
-// export const metadata = {
-//   title: "Vibezz • Dashboard • gimmememes",
-// };
 const fugaz = Fugaz_One({ subsets: ["latin"], weight: ["400"] });
 export default function MemesPage() {
   const { userDataObj } = useAuth(); // Fetching user data from useAuth hook
