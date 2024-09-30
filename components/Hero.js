@@ -50,10 +50,12 @@ export default function Hero() {
         }
       >
         <span className="textGradient">Vibezz</span> helps you track your{" "}
-        <span className="textGradient"> daily </span>mood!
+        <span className="textGradient"> daily </span>mood! and provide u with{" "}
+        <span className="textGradient">memes!</span>
       </h1>
       <p className="w-full mx-auto text-lg text-center sm:text-xl md:text-2xl max-w-[600px]">
-        Create your mood record and see how you feel on{" "}
+        Create your mood, record and see how you feel on also enjoy the memes
+        provided as an add on{" "}
         <span
           id="emoji-target"
           className="font-semibold underline hover:text-[#818cf8]"

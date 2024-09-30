@@ -3,47 +3,18 @@
 import React, { useState, useEffect } from "react";
 import CardComponent from "./CardComponent";
 import { Loading } from "./Loading";
-import { useAuth } from "@/context/AuthContext";
+// import { useAuth } from "@/context/AuthContext";
+// import InfiniteScroll from "react-infinite-scroll-component";
 
-function MemesComponent() {
+function MemesComponent(props) {
   const [memeUrls, setMemeUrls] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const { userDataObj } = useAuth(); // Fetching user data from useAuth hook
-
-  const now = new Date();
-  const currmonth = now.getMonth(); // Adding 1 since getMonth() returns 0-based month
-  const curryear = now.getFullYear();
-  console.log(userDataObj);
-  // Safely check if userDataObj is populated and has data for the current year and month
-  let mymood = null;
-  if (
-    userDataObj &&
-    userDataObj[curryear] &&
-    userDataObj[curryear][currmonth]
-  ) {
-    const rating = userDataObj[curryear][currmonth]; // Access year and month data
-    const days = Object.keys(rating).map(Number); // Get the days as numbers
-    const latestDay = Math.max(...days); // Find the latest day
-    const latestDayData = rating[latestDay]; // Get data for the latest day
-
-    console.log("Data:", latestDayData);
-    mymood = latestDayData;
-  } else {
-    console.log("No data available for the current year and month.");
-  }
-  console.log(mymood);
+  const { mymood } = props;
   const getMemes = async () => {
-    // const moods = {
-    //     "&*@#$": "🤬", --1
-    //     Sad: "😭", --2
-    //     Existing: "😶", --3
-    //     Good: "😄", --4
-    //     Elated: "😍", --5
-    //   };
-    let arr = [];
+    let arr = ["wholesomememes", "memes", "MadeMeSmile", "dankmemes"];
     if (mymood == 1) {
-      arr = [];
+      let arr = ["wholesomememes", "memes", "MadeMeSmile", "dankmemes"];
     } else if (mymood == 2) {
       arr = [
         "UpliftingNews",
@@ -111,7 +82,6 @@ function MemesComponent() {
         "aww",
       ];
     }
-    // const arr = ["memes", "dankmemes", "ProgrammerHumor", "moviememes"];
     let currsub = ""; // Current picked string
 
     function pickRandomSubreddit() {

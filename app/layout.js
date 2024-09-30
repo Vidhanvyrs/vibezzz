@@ -24,10 +24,11 @@ export default function RootLayout({ children }) {
       </Link>
       <Link href={"/dashboard/gimmmememes"}>
         <h1 className={"text-base sm:text-lg textGradient " + fugaz.className}>
-          gimmeMEMES!
+          MOODEMES!
         </h1>
       </Link>
       <Logout />
+      {/* <button className="sticky bottom-0 top-full"> Chats </button> */}
     </header>
   );
   const footer = (
