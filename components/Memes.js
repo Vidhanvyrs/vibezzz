@@ -83,14 +83,22 @@ function MemesComponent(props) {
       ];
     }
     let currsub = ""; // Current picked string
+    let prevIndex = -1; // Store the previously picked index
 
     function pickRandomSubreddit() {
       let randomIndex;
+
+      // Keep picking until we get an index different from the previous one
       do {
         randomIndex = Math.floor(Math.random() * arr.length);
-      } while (arr[randomIndex] === currsub);
+      } while (randomIndex === prevIndex);
 
+      // Update prevIndex to the current index
+      prevIndex = randomIndex;
+
+      // Update currsub to the new picked string
       currsub = arr[randomIndex];
+
       return currsub;
     }
 
